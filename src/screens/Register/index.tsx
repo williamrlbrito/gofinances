@@ -53,8 +53,6 @@ export function Register() {
   const [transactionType, setTransactionType] = useState('');
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
 
-  const dataKey = '@gofinances:transactions';
-
   const [category, setCategory] = useState({
     key: 'category',
     name: 'Categoria',
@@ -94,12 +92,16 @@ export function Register() {
       id: String(uuid.v4()),
       name: form.name,
       amount: form.amount,
-      transactionType,
+      type: transactionType,
       category: category.key,
       date: new Date()
     };
 
+    console.log(transaction);
+
     try {
+      const dataKey = '@gofinances:transactions';
+
       const asyncData = await AsyncStorage.getItem(dataKey);
 
       const data = asyncData ? JSON.parse(asyncData) : [];
