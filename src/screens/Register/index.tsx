@@ -98,8 +98,6 @@ export function Register() {
       date: new Date()
     };
 
-    console.log(transaction);
-
     try {
       const dataKey = '@gofinances:transactions';
 
@@ -123,7 +121,6 @@ export function Register() {
 
       navigation.navigate('Listagem');
     } catch (error) {
-      console.log(error);
       Alert.alert('Nao foi possivel salvar');
     }
   }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -133,10 +133,6 @@ export function Dashboard() {
 
     setIsLoading(false);
   }
-
-  useEffect(()=> {
-    loadTransactions();
-  }, []);
 
   useFocusEffect(useCallback(()=>{
     loadTransactions();
