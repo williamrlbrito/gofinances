@@ -13,6 +13,10 @@ import {
   Title,
   Content,
   ChartContainer,
+  MonthSelect,
+  MonthSelectButton,
+  MonthSelectIcon,
+  Month,
 } from './styles';
 import { categories } from '../../utils/categories';
 
@@ -95,6 +99,18 @@ export function Resume() {
       </Header>
 
       <Content>
+        <MonthSelect>
+          <MonthSelectButton>
+            <MonthSelectIcon name="chevron-left" />
+          </MonthSelectButton>
+
+          <Month>Maio</Month>
+
+          <MonthSelectButton>
+            <MonthSelectIcon name="chevron-right" />
+          </MonthSelectButton>
+        </MonthSelect>
+
         <ChartContainer>
           <VictoryPie 
             data={data}
