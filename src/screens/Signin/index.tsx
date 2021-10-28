@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 import LogoSvg from '../../assets/logo.svg';
 import GoogleSvg from '../../assets/google.svg';
 import AppleSvg from '../../assets/apple.svg';
 
-import { AuthContext } from '../../AuthContext';
+import { useAuth } from '../../hooks/auth';
 
 import { SignInSocialButton } from '../../components/SigninSocialButton';
 
@@ -21,7 +21,7 @@ import  {
 
 
 export function SignIn() {
-  const data = useContext(AuthContext);
+  const { user } = useAuth();
 
   return (
     <Container>
