@@ -1,4 +1,5 @@
 import React from 'react';
+import { Alert } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 import LogoSvg from '../../assets/logo.svg';
@@ -19,9 +20,17 @@ import  {
   FooterWrapper,
 } from './styles';
 
-
 export function SignIn() {
-  const { user } = useAuth();
+  const { signInWithGoogle } = useAuth();
+
+  async function handleSignInWithGoogle() {
+    try {
+      await signInWithGoogle();
+    } catch (error) {
+      console.log(error);
+      Alert.alert('Ocorreu um problema ao tentar conectar a conta Google');
+    }
+  }
 
   return (
     <Container>
@@ -50,6 +59,7 @@ export function SignIn() {
           <SignInSocialButton 
             title="Entrar com Google"
             svg={GoogleSvg}
+            onPress={handleSignInWithGoogle}
           />
 
           <SignInSocialButton 
