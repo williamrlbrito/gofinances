@@ -25,6 +25,8 @@
     "expo-status-bar": "~1.0.4",
     "expo-updates": "~0.8.1",
     "intl": "^1.2.5",
+    "jest": "^27.4.5",
+    "jest-expo": "^44.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-hook-form": "^7.17.5",
@@ -55,7 +57,9 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"]
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
+    ]
   },
   "private": true
 }
