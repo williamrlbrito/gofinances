@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react-native";
+import { render, fireEvent, waitFor } from "@testing-library/react-native";
 import { ThemeProvider } from "styled-components/native";
 import theme from "../../global/styles/theme";
 
@@ -22,6 +22,8 @@ describe("Register Screen", () => {
     const buttonModal = getByTestId("button-category");
     fireEvent.press(buttonModal);
 
-    expect(categoryModal.props.visible).toBeTruthy();
+    waitFor(() => {
+      expect(categoryModal.props.visible).toBeTruthy();
+    });
   });
 });
